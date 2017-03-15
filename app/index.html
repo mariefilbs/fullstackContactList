@@ -13,64 +13,12 @@
             <a class="nav-item" href="#!/home">
               Home
             </a>
-            <a class="nav-item" href="#!/shelters">
-              Find Contact
+            <a class="nav-item" href="#!/contacts">
+              Add Contact
             </a>
           </div>
         </nav>
         <div class="container" ui-view>
-
-        <div ng-controller="ContactController">
-          <h4>Add a Contact</h4>
-         <form ng-submit="create(contact)">
-           <p class="control">
-             <input type="text" placeholder="Name"
-                    ng-model="contact.name" />
-           </p>
-           <p class="control">
-             <input type="text" placeholder="Phone Number"
-                    ng-model="contact.phone_number" />
-           </p>
-           <p class="control">
-              <input type="text" placeholder="City"
-                    ng-model="contact.city" />
-           </p>
-           <p class="control">
-              <input type="text" placeholder="State"
-                    ng-model="contact.state" />
-           <p class="control">
-             <input type="text" placeholder="Add a photo link"
-                    ng-model="contact.photo_Url" />
-           </p>
-           <p class="control">
-             <button class="button is-primary">Create!</button>
-           </p>
-         </form>
-         <p ng-show="currentContact">{{ currentContact.name }} has been added to your contacts! Rock on!</p>
-
-         <div>
-            <h1>Welcome to your Contact List!</h1>
-            <ul class="contacts">
-              <li ng-repeat="contact in contacts">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-1by1">
-                      <img src="{{ contact.photo_URL }}" alt="Image">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <p class="title is-4">{{ contact.name }}</p>
-                        <p class="subtitle is-6">{{ contact.city }}</p>
-                        <p class="subtitle is-6">{{ contact.state }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
 
         </div>
       </div>

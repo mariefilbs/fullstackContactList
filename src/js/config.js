@@ -5,7 +5,8 @@ function Config ($stateProvider, $urlRouterProvider) {
   $stateProvider
      .state('home', {
        url: '/home',
-       templateURL: 'templates/contacts-home.html'
+       templateUrl: 'templates/contacts-home.tpl.html',
+       controller: 'ContactController'
      })
      .state('page-not-found', {
        url: '/not-found',

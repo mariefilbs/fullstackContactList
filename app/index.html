@@ -8,11 +8,37 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
     <body ng-app="app">
-        <div ui-view></div>
+      <div ui-view></div>
 
-        <div class="container">
-          <div ng-controller="ContactController"></div>
+      <div class="container">
+        <div ng-controller="ContactController">
+          <h4>Add a Contact</h4>
+         <form ng-submit="create(contact)">
+           <p class="control">
+             <input type="text" placeholder="Name"
+                    ng-model="contact.name" />
+           </p>
+           <p class="control">
+             <input type="text" placeholder="Phone Number"
+                    ng-model="contact.phone_number" />
+           </p>
+           <p class="control">
+              <input type="text" placeholder="City"
+                    ng-model="contact.city" />
+           </p>
+           <p class="control">
+              <input type="text" placeholder="State"
+                    ng-model="contact.state" />
+           <p class="control">
+             <input type="text" placeholder="Add a photo link"
+                    ng-model="contact.photo_Url" />
+           </p>
+           <p class="control">
+             <button class="button is-primary">Create!</button>
+           </p>
+         </form>
         </div>
-    <script src="js/bundle.js"></script>
+      </div>
+      <script src="js/bundle.js"></script>
     </body>
 </html>

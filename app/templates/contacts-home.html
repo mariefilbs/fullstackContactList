@@ -1,0 +1,23 @@
+<div>
+   <h1>Welcome to your Contact List!</h1>
+   <ul class="contacts">
+     <li ng-repeat="contact in contacts">
+       <div class="card">
+         <div class="card-image">
+           <figure class="image is-1by1">
+             <img src="{{ contact.photo_URL }}" alt="Image">
+           </figure>
+         </div>
+         <div class="card-content">
+           <div class="media">
+             <div class="media-content">
+               <p class="title is-4">{{ contact.name }}</p>
+               <p class="subtitle is-6">{{ contact.city }}</p>
+               <p class="subtitle is-6">{{ contact.state }}</p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </li>
+   </ul>
+ </div>

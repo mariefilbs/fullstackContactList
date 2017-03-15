@@ -3,7 +3,6 @@ const SERVER_URL = "https://shrouded-oasis-34673.herokuapp.com";
 
 function ContactController ($scope, $http) {
   console.log("Welcome to Contact controller");
-  $scope.currentContact = null;
   $scope.contacts = [];
 
   function init () {
@@ -14,14 +13,14 @@ function ContactController ($scope, $http) {
   }
   init();
 
-  $scope.create = function (data, contactId) {
-    var url = `${SERVER_URL}/contacts/${contactId}`;
+  $scope.create = function (data) {
+    var url = `${SERVER_URL}/contacts`;
     $http.post(url, data).then(resp => {
-      console.log(data);
-      $scope.currentContact = resp.data;
+      $scope.contacts.push(resp.data);
+      console.log($scope.contacts);
     });
   };
-  $scope.create();
+
 
 }
 

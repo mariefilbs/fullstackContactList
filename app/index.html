@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
     <body ng-app="app">
-      <div ui-view></div>
+      <nav>
+          <div class="nav-right nav-menu">
+            <a class="nav-item" href="#!/home">
+              Home
+            </a>
+            <a class="nav-item" href="#!/shelters">
+              Find Contact
+            </a>
+          </div>
+        </nav>
+        <div class="container" ui-view>
 
-      <div class="container">
         <div ng-controller="ContactController">
           <h4>Add a Contact</h4>
          <form ng-submit="create(contact)">
@@ -37,6 +46,32 @@
              <button class="button is-primary">Create!</button>
            </p>
          </form>
+         <p ng-show="currentContact">{{ currentContact.name }} has been added to your contacts! Rock on!</p>
+
+         <div>
+            <h1>Welcome to your Contact List!</h1>
+            <ul class="contacts">
+              <li ng-repeat="contact in contacts">
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-1by1">
+                      <img src="{{ contact.photo_URL }}" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4">{{ contact.name }}</p>
+                        <p class="subtitle is-6">{{ contact.city }}</p>
+                        <p class="subtitle is-6">{{ contact.state }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
       <script src="js/bundle.js"></script>

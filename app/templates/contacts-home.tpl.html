@@ -1,23 +1,29 @@
 <div>
-   <h1>Welcome to your Contact List!</h1>
+   <p class="welcome">Welcome to your Contact List!</p>
    <ul class="contacts">
      <li ng-repeat="contact in contacts">
+       <a href='#!/contacts/{{ contact.id }}'>
        <div class="card">
          <div class="card-image">
-           <figure class="image is-1by1">
-             <img src="{{ contact.photo_URL }}" alt="Image">
+           <figure class="image is-128x128">
+             <img src="{{ contact.photo_URL }}" alt="Image"/>
            </figure>
          </div>
          <div class="card-content">
            <div class="media">
              <div class="media-content">
+               <i class="fa fa-user-circle" aria-hidden="true"></i>
                <p class="title is-4">{{ contact.name }}</p>
+               <i class="fa fa-mobile" aria-hidden="true"></i>
+               <p class ="subtitle is-4>">{{ contact.phone_number }}</p>
+               <i class="fa fa-globe" aria-hidden="true"></i>
                <p class="subtitle is-6">{{ contact.city }}</p>
                <p class="subtitle is-6">{{ contact.state }}</p>
              </div>
            </div>
          </div>
        </div>
+      </a>
      </li>
    </ul>
  </div>
